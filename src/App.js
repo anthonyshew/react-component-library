@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './lib/redux';
 
-import InboxScreen from './components/InboxScreen/InboxScreen';
+import AppWrapper from './components/AppWrapper'
 
-function App() {
+const App = (props) => {
+
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize", () => setViewportHeight(window.innerHeight)
+    )
+  }, [])
+
   return (
     <Provider store={store}>
-      <InboxScreen />
+      <AppWrapper viewportHeight={viewportHeight}>
+        Hi, world.
+        <div style={{ position: "absolute", bottom: 0 }}>Don't cut me off.</div>
+      </AppWrapper>
     </Provider>
   );
 }
