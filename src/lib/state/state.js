@@ -1,8 +1,10 @@
-export const initialState = { key: "This is some initial state." }
+export const initialState = { activeTheme: "light" }
 
 export const reducer = (state, action) => {
     switch (action.type) {
+        case 'loadLocalStorage':
+            return action.localStorageState
         default:
-            console.log("you hit the reducer")
+            return state
     }
 }

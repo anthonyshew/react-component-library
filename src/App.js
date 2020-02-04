@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
@@ -10,24 +10,17 @@ import LocalStorageManager from './components/lib/LocalStorageManager'
 import AppWrapper from './components/AppWrapper'
 
 const App = (props) => {
-
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
-
-  useEffect(() => {
-    window.addEventListener("resize", () => setViewportHeight(window.innerHeight))
-  }, [])
-
   return (
     <Router>
       <StateProvider initialState={initialState} reducer={reducer}>
         {GA.init() && <GA.RouteTracker />}
         <LocalStorageManager />
-        <AppWrapper viewportHeight={viewportHeight}>
-          Hi, world.
-        <Switch>
-
+        <AppWrapper>
+          <Switch>
+            <Route exact path="/" render={() => <div className="replace-me-with-home-page">Replace me with a home page!</div>} />
           </Switch>
-          <div style={{ position: "absolute", bottom: 0 }}>Don't cut me off.</div>
+          {[...Array(3)].map((elem, index) => <p key={index}>Lorem ipsum, my dude!</p>)}
+          <div style={{ position: "absolute", bottom: 0 }}>Don't cut me off. EVER. Or unless the page is long enough. :D</div>
         </AppWrapper>
       </StateProvider>
     </Router >

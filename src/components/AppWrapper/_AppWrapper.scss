@@ -1,3 +1,15 @@
 .app-wrapper {
-    min-width: 100vw;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.theme-light {
+    background-color: white;
+    color: black;
+}
+
+.theme-dark {
+    background-color: black;
+    color: white;
 }
