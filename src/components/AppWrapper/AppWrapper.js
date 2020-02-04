@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './_AppWrapper.scss'
 
 const AppWrapper = (props) => {
