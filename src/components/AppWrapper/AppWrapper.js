@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './_AppWrapper.scss'
-import { useStateValue } from '../../lib/hooks/useStateValue'
+import useStateValue from '../../lib/hooks/useStateValue'
 
 const AppWrapper = ({ children }) => {
 

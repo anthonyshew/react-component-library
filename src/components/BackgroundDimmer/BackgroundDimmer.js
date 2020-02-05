@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './_BackgroundDimmer.scss'
 
-import { useBodyScrollLock } from '../../lib/hooks/useBodyScrollLock'
+import useBodyScrollLock from '../../lib/hooks/useBodyScrollLock'
 
 const BackgroundDimmer = ({ closeParent }) => {
 

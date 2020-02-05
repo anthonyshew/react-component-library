@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { initialState } from '../../lib/state/state'
-import { useStateValue } from '../../lib/hooks/useStateValue'
+import useStateValue from '../../lib/hooks/useStateValue'
 
 const LocalStorageManager = (props) => {
 

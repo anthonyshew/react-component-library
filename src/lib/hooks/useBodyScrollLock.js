@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export const useBodyScrollLock = () => {
+const useBodyScrollLock = () => {
     useEffect(() => {
         document.querySelector('body').style.position = 'fixed'
         document.querySelector('body').style.overflowY = 'scroll'
@@ -11,3 +11,5 @@ export const useBodyScrollLock = () => {
         }
     }, [])
 }
+
+export default useBodyScrollLock
