@@ -1,18 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import './_BackgroundDimmer.scss'
 
+import { useBodyScrollLock } from '../../lib/hooks/useBodyScrollLock'
+
 const BackgroundDimmer = ({ closeParent }) => {
 
-    useEffect(() => {
-        document.querySelector('body').style.position = 'fixed'
-        document.querySelector('body').style.overflowY = 'scroll'
-
-        return () => {
-            document.querySelector('body').style.position = 'initial'
-            document.querySelector('body').style.overflowY = 'initial'
-        }
-    }, [])
+    useBodyScrollLock()
 
     return (
         <span className="background-dimmer"

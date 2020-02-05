@@ -7,7 +7,7 @@ import BackgroundDimmer from './BackgroundDimmer'
 export default {
     component: BackgroundDimmer,
     title: 'BackgroundDimmer',
-    decorators: [withKnobs, withA11y],
+    decorators: [withKnobs, withA11y, story => <div style={{ height: "2000px", color: "white" }}>This should be scrollable but it is not because of the background dimmer.{story()}</div>],
     excludeStories: /.*Data$/
 }
 
