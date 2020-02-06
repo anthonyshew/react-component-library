@@ -13,9 +13,9 @@ export default {
     excludeStories: /.*Data$/
 }
 
-export const hamburgerData = <SVG name="hamburger" handleClick={action('open-menu')} />
+export const hamburgerData = <SVG name="hamburger" handleClick={action('open-menu')} title="Hamburger Button" desc="This image acts as a button used for opening the mobile menu." alt="Hamburger button for opening the mobile menu" />
 
-export const svgLogoData = <SVG name="logo" />
+export const svgLogoData = <SVG name="logo" title="Shewperman Logo" desc="The Shewperman Logo looks a lot like the Superman Logo....with a shoe." alt="Shewperman Logo" />
 
 export const imageLogoData = <img src="/media/eagle.jpg" alt="Alt text." />
 

@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './_SVG.scss'
 
-const getPath = (name, className, handleClick, title, desc) => {
+const getPath = (name, className, handleClick, title, desc, alt) => {
     switch (name) {
         case "logo":
             return (
                 <>
-                    <svg className={className} viewBox="0 0 279 281" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <svg className={className} viewBox="0 0 279 281" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" alt={alt}>
                         <title>{title}</title>
                         <desc>{desc}</desc>
                         <path d="M0 20C0 8.95431 8.95431 0 20 0H139.07H258.14C269.186 0 278.14 8.95431 278.14 20V145.094C278.14 150.711 275.778 156.069 271.632 159.858L152.562 268.67C144.922 275.652 133.218 275.652 125.578 268.67L6.5081 159.858C2.36185 156.069 0 150.711 0 145.094V20Z" fill="#770000" />
@@ -31,7 +31,7 @@ const getPath = (name, className, handleClick, title, desc) => {
         case "hamburger":
             return (
                 <>
-                    <svg className={className} onClick={handleClick} viewBox="0 0 296 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <svg className={className} onClick={handleClick} viewBox="0 0 296 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" alt={alt}>
                         <title>{title}</title>
                         <desc>{desc}</desc>
                         <rect x="1.5" y="1.5" width="293" height="97" rx="6.5" stroke="black" strokeWidth="3" />
@@ -51,16 +51,17 @@ const getPath = (name, className, handleClick, title, desc) => {
     }
 }
 
-const SVG = ({ name, className, handleClick, title, desc }) => {
+const SVG = ({ name, className, handleClick, title, desc, alt }) => {
     return (
-        getPath(name, className, handleClick, title, desc)
+        getPath(name, className, handleClick, title, desc, alt)
     )
 }
 
-SVG.PropTypes = {
+SVG.propTypes = {
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
 }
 
 export default SVG
