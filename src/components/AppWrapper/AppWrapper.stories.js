@@ -52,12 +52,7 @@ export const TooWideContent = () => (
 export const WithDarkMode = () => (
     <StateProvider initialState={{ activeTheme: 'dark' }}>
         <AppWrapper>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
-            <p>Please note that viewport units in an iframe are apparently not the same as devices?</p>
+            {[...Array(20)].map((elem, i) => <p key={i}>Lorem ipsum, my dude!</p>)}
             <div style={{ position: "absolute", bottom: 0 }}>Don't cut me off. EVER. Or unless the page is long enough. :D</div>
         </AppWrapper>
     </StateProvider>
