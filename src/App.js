@@ -2,12 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css'
 
+import { linksData, svgLogoData, hamburgerData } from './components/Navbar/Navbar.stories'
+
 import GA from './components/lib/GoogleAnalytics'
 import { StateProvider } from './components/lib/StateProvider'
 import { initialState, reducer } from './lib/state/state'
 import LocalStorageManager from './components/lib/LocalStorageManager'
 import Navbar from './components/Navbar'
-
 import AppWrapper from './components/AppWrapper'
 
 const App = (props) => {
@@ -17,7 +18,7 @@ const App = (props) => {
         {GA.init() && <GA.RouteTracker />}
         <LocalStorageManager />
         <AppWrapper>
-          <Navbar />
+          <Navbar logo={svgLogoData} breakpoint={700} linksArray={linksData} hamburger={hamburgerData} />
           <Switch>
             <Route exact path="/" render={() => <div className="replace-me-with-home-page">Replace me with a home page!</div>} />
           </Switch>

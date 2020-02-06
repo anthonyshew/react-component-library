@@ -1,9 +1,10 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, object } from '@storybook/addon-knobs'
+import { withKnobs } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
 import Navbar from './Navbar'
+import SVG from '../SVG/SVG'
 
 export default {
     component: Navbar,
@@ -11,6 +12,12 @@ export default {
     decorators: [withKnobs, withA11y, story => <MemoryRouter>{story()}</MemoryRouter>],
     excludeStories: /.*Data$/
 }
+
+export const hamburgerData = <SVG name="hamburger" handleClick={action('open-menu')} />
+
+export const svgLogoData = <SVG name="logo" />
+
+export const imageLogoData = <img src="/media/eagle.jpg" alt="Alt text." />
 
 export const linksData = [
     {
@@ -20,11 +27,27 @@ export const linksData = [
     {
         href: "/about",
         linkText: "About"
+    },
+    {
+        href: "/pricing",
+        linkText: "Pricing"
+    },
+    {
+        href: "/anothing-thing",
+        linkText: "Another Thing"
+    },
+    {
+        href: "/contact",
+        linkText: "Contact Us"
     }
 ]
 
-export const Default = () => <Navbar linksArray={linksData} />
+export const Default = () => <Navbar logo={svgLogoData} linksArray={linksData} />
 
-export const OpaqueBackground = () => <Navbar linksArray={linksData} r={255} g={0} b={0} transparency={1} textColor="yellow" />
+export const WithBackground = () => <Navbar logo={svgLogoData} hamburger={hamburgerData} linksArray={linksData} backgroundColor="#e5e5e5" />
 
-export const TransparentBackground = () => <Navbar linksArray={linksData} r={255} g={255} b={255} transparency={0} textColor="white" />
+export const WithImage = () => <Navbar logo={imageLogoData} hamburger={hamburgerData} linksArray={linksData} />
+
+export const WithBreakpoint = () => <Navbar logo={svgLogoData} breakpoint={500} hamburger={hamburgerData} linksArray={linksData} />
+
+export const AlwaysHamburger = () => <Navbar logo={svgLogoData} breakpoint={0} hamburger={hamburgerData} linksArray={linksData} />

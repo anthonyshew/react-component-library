@@ -1,25 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './_Navbar.scss'
-import { linksData } from './Navbar.stories'
-import { viewBoxData, artworkData } from '../SVG/SVG.stories'
 
-import SVG from '../SVG/SVG'
+import useViewportDimensions from '../../lib/hooks/useViewportDimensions'
 
-const Navbar = ({ r, g, b, transparency, textColor, breakpoint, linksArray }) => {
+const Navbar = ({ breakpoint, logo, hamburger, linksArray, backgroundColor }) => {
+
+    const [viewportWidth] = useViewportDimensions()
+
     return (
-        <nav className="navbar" style={{ backgroundColor: `rgba(${r ?? 255},${g ?? 255},${b ?? 255}, ${transparency ?? 1})`, color: textColor ?? "#000000" }}>
-            <span className="logo-link"><SVG viewBox={viewBoxData} artwork={artworkData} /></span>
-            <span className="nav-link-list">
-                {linksData.map((elem) => {
+        <nav className="navbar" style={{ backgroundColor: backgroundColor }}>
+            <span className="logo-link">{logo}</span>
+            {viewportWidth < breakpoint || breakpoint === 0 ? hamburger : <span className="nav-link-list">
+                {linksArray.map((elem) => {
                     return <Link key={elem.href}
                         to={elem.href}
-                        className="nav-link"
-                        style={{ color: textColor ?? "#000000" }}>
+                        className="nav-link">
                         {elem.linkText}
                     </Link>
                 })}
-            </span>
+            </span>}
         </nav>
     )
 }
