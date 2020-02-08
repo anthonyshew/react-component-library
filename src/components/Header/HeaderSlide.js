@@ -1,11 +1,12 @@
 import React from 'react'
 
-const HeaderSlide = ({ className, backgroundImage, children }) => {
+const HeaderSlide = ({ className, backgroundImage, styles, children }) => {
     return (
         <div
             className={`header-slide${className ? " " + className : ""}`}
             style={{
-                backgroundImage: `url(${backgroundImage})`
+                backgroundImage: `url(${backgroundImage})`,
+                ...styles,
             }}
         >
             {children}

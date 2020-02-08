@@ -1,13 +1,15 @@
 import React from 'react'
 import './_Header.scss'
 
+import SlideShow from './Slideshow'
+
 const Header = ({
     containerName,
     background,
     backgroundSize,
     backgroundPosition,
     height,
-    noDimmer,
+    dimmer,
     slideshow,
     children
 }) => {
@@ -22,7 +24,8 @@ const Header = ({
                 height: height ? height : null
             }}
         >
-            {noDimmer ? null : <span className="background-dimmer"></span>}
+            {dimmer ? <span className="background-dimmer"></span> : null}
+            {slideshow ? <SlideShow slides={slideshow[0]} interval={slideshow[1]} /> : null}
             {children}
         </header>
     )

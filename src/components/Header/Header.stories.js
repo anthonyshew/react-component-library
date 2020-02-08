@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions'
 import { withKnobs, object } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
 import Header from './Header'
-import Slideshow from './Slideshow'
 
 export default {
     component: Header,
@@ -19,23 +18,31 @@ export const Default = () => (
     </Header>
 )
 
-export const noDimmer = () => (
-    <Header background="/media/eagle.jpg" containerName="test" noDimmer>
+export const WithDimmer = () => (
+    <Header background="/media/eagle.jpg" containerName="test" dimmer>
         <h1>Some h1</h1>
         <h2>Another h2</h2>
     </Header>
 )
 
-export const MultiBackground = () => (
+export const SlideShowUntested = () => (
     <Header
         containerName="test"
-        noDimmer
+        slideshow={[["/media/eagle.jpg", "/media/giraffe.jpg", "/media/turtle.jpg", "/media/goat.jpg", "/media/grasshopper.jpg"], 5000]}
+
     >
         <h1>Some h1</h1>
         <h2>Another h2</h2>
-        <Slideshow
-            slides={["/media/eagle.jpg", "/media/giraffe.jpg", "/media/turtle.jpg"]}
-            interval={3000}
-        />
+    </Header>
+)
+
+export const SlideShowWithDimmerUntested = () => (
+    <Header
+        containerName="test"
+        slideshow={[["/media/eagle.jpg", "/media/giraffe.jpg", "/media/turtle.jpg", "/media/goat.jpg", "/media/grasshopper.jpg"], 5000]}
+        dimmer
+    >
+        <h1>Some h1</h1>
+        <h2>Another h2</h2>
     </Header>
 )

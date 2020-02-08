@@ -3564,6 +3564,53 @@ exports[`Storyshots BackgroundDimmer Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Header Default 1`] = `
+<header
+  className="header-test header"
+  style={
+    Object {
+      "backgroundImage": "url(/media/eagle.jpg)",
+      "backgroundPosition": "center",
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "cover",
+      "height": null,
+    }
+  }
+>
+  <h1>
+    Some h1
+  </h1>
+  <h2>
+    Another h2
+  </h2>
+</header>
+`;
+
+exports[`Storyshots Header With Dimmer 1`] = `
+<header
+  className="header-test header"
+  style={
+    Object {
+      "backgroundImage": "url(/media/eagle.jpg)",
+      "backgroundPosition": "center",
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "cover",
+      "height": null,
+    }
+  }
+>
+  <span
+    className="background-dimmer"
+  />
+  <h1>
+    Some h1
+  </h1>
+  <h2>
+    Another h2
+  </h2>
+</header>
+`;
+
 exports[`Storyshots LoadingSpinner Default 1`] = `
 <div
   className="storybook-center-center"
