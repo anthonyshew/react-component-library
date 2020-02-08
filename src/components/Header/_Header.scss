@@ -1,5 +1,3 @@
-@import '../../../styles/_variables.scss';
-
 .header {
     position: relative;
     display: flex;
@@ -8,6 +6,7 @@
     align-items: center;
     min-height: 250px;
     padding-bottom: 1rem;
+    overflow-x: hidden;
 
     .background-dimmer {
         position: absolute;
@@ -18,12 +17,35 @@
         background-color: rgba(19, 33, 65, .5)
     }
 
+    .container-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-x: hidden;
+    }
+
+    .header-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .header-slide:nth-of-type(2) {
+        transform: translateX(100%);
+    }
+
     h1 {
         z-index: 1;
         text-align: center;
         color: #ffffff;
         font-size: 36px;
-        font-family: $passion;
     }
 
     h2 {
@@ -31,6 +53,5 @@
         text-align: center;
         font-size: 18px;
         color: #ffffff;
-        font-family: $open-sans;
     }
 }

@@ -1,20 +1,29 @@
 import React from 'react'
 import './_Header.scss'
 
-const Header = (props) => {
+const Header = ({
+    containerName,
+    background,
+    backgroundSize,
+    backgroundPosition,
+    height,
+    noDimmer,
+    slideshow,
+    children
+}) => {
     return (
         <header
-            className={`header-${process.env.PUBLIC_URL + props.containerName} header`}
+            className={`header-${containerName} header`}
             style={{
-                backgroundImage: `url(${props.background})`,
-                backgroundSize: `${props.backgroundSize || 'cover'}`,
-                backgroundPosition: `${props.backgroundPosition || 'center'}`,
+                backgroundImage: background ? `url(${background})` : null,
+                backgroundSize: `${backgroundSize || 'cover'}`,
+                backgroundPosition: `${backgroundPosition || 'center'}`,
                 backgroundRepeat: 'no-repeat',
-                height: props.height ? props.height : null
+                height: height ? height : null
             }}
         >
-            {props.noDimmer ? null : <span className="background-dimmer"></span>}
-            {props.children}
+            {noDimmer ? null : <span className="background-dimmer"></span>}
+            {children}
         </header>
     )
 }
