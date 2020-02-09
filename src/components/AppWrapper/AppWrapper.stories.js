@@ -7,7 +7,7 @@ import AppWrapper from './AppWrapper'
 
 export default {
     component: AppWrapper,
-    title: 'AppWrapper',
+    title: 'Wrappers/AppWrapper',
     decorators: [withKnobs, withA11y],
     excludeStories: /.*Data$/
 }
