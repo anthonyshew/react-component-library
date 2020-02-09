@@ -73,7 +73,7 @@ const Slideshow = ({ slides, interval, children }) => {
     }, [animsCompleted])
 
     return (
-        <span className="container-slideshow">
+        <span className="container-slideshow" aria-hidden="true">
             <HeaderSlide
                 className={`header-slide-${arrIndex}`}
                 backgroundImage={slides[arrIndex]}
