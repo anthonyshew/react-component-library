@@ -7,7 +7,10 @@ const AppWrapper = ({ children }) => {
     const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
 
     useEffect(() => {
-        window.addEventListener("resize", () => setViewportHeight(window.innerHeight))
+        const setter = () => setViewportHeight(window.innerHeight)
+
+        window.addEventListener("resize", setter)
+        return () => window.removeEventListener("resize", setter)
     }, [])
 
     const [{ activeTheme }] = useStateValue()
