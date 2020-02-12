@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import gsap from 'gsap'
 import './_Header.scss'
 
@@ -28,6 +29,10 @@ const Header = ({
             {children}
         </header>
     )
+}
+
+Header.propTypes = {
+    containerName: PropTypes.string.isRequired
 }
 
 export default Header

@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
+import docs from './documentation'
 import Navbar from './Navbar'
 import SVG from '../SVG/SVG'
 import StoryScroller from '../StorybookWrappers/StoryScroller'
@@ -10,6 +11,9 @@ import StoryScroller from '../StorybookWrappers/StoryScroller'
 export default {
     component: Navbar,
     title: 'Navbar',
+    parameters: {
+        info: { text: docs }
+    },
     decorators: [withKnobs, withA11y, story => <MemoryRouter>{story()}</MemoryRouter>],
     excludeStories: /.*Data$/
 }

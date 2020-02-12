@@ -10,6 +10,6 @@ Ensure that the app is always, at least, the height of the viewport with the use
 children only\n
 ---
 ##### Relevant State Values\n
-theme: Used to assign className to top-level container of entire app.`
+theme: String. Used to assign className to top-level container of entire app.`
 
 export default docs

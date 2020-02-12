@@ -2,11 +2,15 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, object } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
+import docs from './documentation'
 import Header from './Header'
 
 export default {
     component: Header,
     title: 'Header',
+    parameters: {
+        info: { text: docs }
+    },
     decorators: [withKnobs, withA11y],
     excludeStories: /.*Data$/
 }

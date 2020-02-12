@@ -5,7 +5,13 @@ import './_Navbar.scss'
 import useViewportDimensions from '../../lib/hooks/useViewportDimensions'
 import useScrollPosition from '../../lib/hooks/useScrollPosition'
 
-const Navbar = ({ stickyTop, logoHidesOnScroll, breakpoint, logo, hamburger, linksArray, backgroundColor }) => {
+const Navbar = ({ stickyTop,
+    logoHidesOnScroll,
+    breakpoint,
+    logo,
+    hamburger,
+    linksArray,
+    backgroundColor }) => {
 
     const [viewportWidth, viewportHeight] = useViewportDimensions()
     const scrollPosition = useScrollPosition()
@@ -17,7 +23,12 @@ const Navbar = ({ stickyTop, logoHidesOnScroll, breakpoint, logo, hamburger, lin
             top: stickyTop ? "0" : "initial",
             zIndex: stickyTop ? "100" : "initial"
         }}>
-            <Logo logo={logo} scrollPosition={scrollPosition} viewportHeight={viewportHeight} logoHidesOnScroll={logoHidesOnScroll} />
+            <Logo
+                logo={logo}
+                scrollPosition={scrollPosition}
+                viewportHeight={viewportHeight}
+                logoHidesOnScroll={logoHidesOnScroll}
+            />
             {viewportWidth < breakpoint || breakpoint === 0 ? <span className="container-hamburger">{hamburger}</span> : <span className="nav-link-list">
                 {linksArray.map((elem) => {
                     return <Link key={elem.href}

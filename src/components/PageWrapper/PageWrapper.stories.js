@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, object } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
+import docs from './documentation'
 import { StateProvider } from '../lib/StateProvider'
 import PageWrapper from './PageWrapper'
 
@@ -13,6 +14,9 @@ import Navbar from '../Navbar'
 export default {
     component: PageWrapper,
     title: 'Wrappers/PageWrapper',
+    parameters: {
+        info: { text: docs }
+    },
     decorators: [withKnobs, withA11y],
     excludeStories: /.*Data$/
 }

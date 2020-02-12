@@ -7,6 +7,6 @@ Locks scrolling of the body with the useBodyScrollLock hook.\n
 Closes it's parent component on click.\n
 ---
 ##### Props\n
-!REQUIRED! closeParent: Supply a toggle function that changes state to close the parent component of the background dimmer.`
+!REQUIRED! closeParent: Function. A toggle function that changes state to close the parent component of the background dimmer.`
 
 export default docs
