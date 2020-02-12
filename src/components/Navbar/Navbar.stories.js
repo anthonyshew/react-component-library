@@ -5,6 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { withA11y } from '@storybook/addon-a11y'
 import Navbar from './Navbar'
 import SVG from '../SVG/SVG'
+import StoryScroller from '../StorybookWrappers/StoryScroller'
 
 export default {
     component: Navbar,
@@ -51,3 +52,7 @@ export const WithImage = () => <Navbar logo={imageLogoData} hamburger={hamburger
 export const WithBreakpoint = () => <Navbar logo={svgLogoData} breakpoint={500} hamburger={hamburgerData} linksArray={linksData} />
 
 export const AlwaysHamburger = () => <Navbar logo={svgLogoData} breakpoint={0} hamburger={hamburgerData} linksArray={linksData} />
+
+export const StickyTop = () => <StoryScroller><Navbar stickyTop logo={svgLogoData} breakpoint={0} hamburger={hamburgerData} linksArray={linksData} /></StoryScroller>
+
+export const StickyTopAndLogoHides = () => <StoryScroller><Navbar stickyTop logoHidesOnScroll logo={svgLogoData} breakpoint={0} hamburger={hamburgerData} linksArray={linksData} /></StoryScroller>

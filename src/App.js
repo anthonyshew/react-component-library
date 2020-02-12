@@ -15,7 +15,7 @@ const App = (props) => {
   return (
     <Router>
       <StateProvider initialState={initialState} reducer={reducer}>
-        {GA.init() && <GA.RouteTracker />}
+        {GA.init("") && <GA.RouteTracker />}
         <LocalStorageManager />
         <AppWrapper>
           <Navbar logo={svgLogoData} breakpoint={700} linksArray={linksData} hamburger={hamburgerData} />

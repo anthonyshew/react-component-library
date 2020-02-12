@@ -12,7 +12,7 @@ export default {
     excludeStories: /.*Data$/
 }
 
-export const TooShortContent = () => (
+export const ShortContent = () => (
     <StateProvider initialState={{ activeTheme: 'light' }}>
         <AppWrapper>
             {[...Array(1)].map((elem, i) => <p key={i}>Lorem ipsum, my dude!</p>)}
@@ -39,7 +39,7 @@ export const LongContent = () => (
     </StateProvider>
 )
 
-export const TooWideContent = () => (
+export const WideContent = () => (
     <StateProvider initialState={{ activeTheme: 'light' }}>
         <AppWrapper>
             <p style={{ width: "1000px" }}>I'm fat as sh{[...Array(1000)].map((elem, i) => <span key={i}>i</span>)}t.</p>
