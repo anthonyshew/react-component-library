@@ -1,5 +1,8 @@
 import '../src/index.css'
-import { addParameters } from '@storybook/react'
+import { addParameters, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+
+addDecorator(withInfo)
 
 addParameters({
     backgrounds: [

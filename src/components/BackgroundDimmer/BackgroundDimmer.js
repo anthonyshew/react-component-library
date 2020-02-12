@@ -11,7 +11,6 @@ const BackgroundDimmer = ({ closeParent }) => {
     return (
         <span className="background-dimmer"
             onClick={closeParent}
-            data-testid="background-dimmer"
         >
         </span>
     )

@@ -8,7 +8,6 @@ const AppWrapper = ({ children }) => {
 
     useEffect(() => {
         const setter = () => setViewportHeight(window.innerHeight)
-
         window.addEventListener("resize", setter)
         return () => window.removeEventListener("resize", setter)
     }, [])
